@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<library>
+
+<feature id="pathfinder">
+    <data name="attr.str">8</data>
+    <data name="attr.dex">8</data>
+    <data name="attr.con">8</data>
+    <data name="attr.int">8</data>
+    <data name="attr.wis">8</data>
+    <data name="attr.cha">8</data>
+    <data name="attr.cha">8</data>
+    <data name="attr.cha">8</data>
+    <choice id="ancestry">
+        <meta>ancestry</meta>
+    </choice>
+</feature>
+
+<!-- Ability Boosts  -->
+<feature id="boost.str" repeat="true">
+    <meta>boost</meta>
+    <meta>str</meta>
+    <add value="attr.str">2</add>
+</feature>
+
+<feature id="boost.dex" repeat="true">
+    <meta>boost</meta>
+    <meta>dex</meta>
+    <add value="attr.dex">2</add>
+</feature>
+
+<feature id="boost.con" repeat="true">
+    <meta>boost</meta>
+    <meta>con</meta>
+    <add value="attr.con">2</add>
+</feature>
+
+<feature id="boost.int" repeat="true">
+    <meta>boost</meta>
+    <meta>int</meta>
+    <add value="attr.int">2</add>
+</feature>
+
+<feature id="boost.wis" repeat="true">
+    <meta>boost</meta>
+    <meta>wis</meta>
+    <add value="attr.wis">2</add>
+</feature>
+
+<feature id="boost.cha" repeat="true">
+    <meta>boost</meta>
+    <meta>cha</meta>
+    <add value="attr.cha">2</add>
+</feature>
+
+<!--Languages-->
+<feature id="language.common">
+    <meta>language</meta>
+</feature>
+
+<feature id="language.dwarven">
+    <meta>language</meta>
+</feature>
+
+<!--Vision-->
+<feature id="vision.darkvision">
+    <meta>vision</meta>
+</feature>
+
+<!-- Ancestries -->
+<feature id="ancestry.dwarf">
+    <meta>ancestry</meta>
+    <ref id="boost.con" />
+    <ref id="boost.wis" />
+    <ref id="language.common" />
+    <ref id="language.dwarven" />
+    <ref id="vision.darkvision" />
+    <data name="size">"medium"</data>
+    <data name="speed">20</data>
+    <choice id="free-attr">
+        <and>
+            <meta>boost</meta>
+            <or>
+                <meta>str</meta>
+                <meta>dex</meta>
+                <meta>int</meta>
+                <meta>con</meta>
+            </or>
+        </and>
+    </choice>
+</feature>
+
+
+
+</library>
