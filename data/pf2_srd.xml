@@ -2,17 +2,36 @@
 <library>
 
 <feature id="pathfinder">
-    <data name="attr.str">8</data>
-    <data name="attr.dex">8</data>
-    <data name="attr.con">8</data>
-    <data name="attr.int">8</data>
-    <data name="attr.wis">8</data>
-    <data name="attr.cha">8</data>
-    <data name="attr.cha">8</data>
-    <data name="attr.cha">8</data>
+    <choice id="attrs" default="attrs.default">
+        <meta>attrs</meta>
+    </choice>
     <choice id="ancestry">
         <meta>ancestry</meta>
     </choice>
+</feature>
+
+<feature id="attrs.default">
+    <data name="attr.str">10</data>
+    <data name="attr.dex">10</data>
+    <data name="attr.con">10</data>
+    <data name="attr.int">10</data>
+    <data name="attr.wis">10</data>
+    <data name="attr.cha">10</data>
+    <data name="attr.cha">10</data>
+    <data name="attr.cha">10</data>
+    <meta>attrs</meta>
+</feature>
+
+<feature id="attrs.rolled">
+    <meta>attrs</meta>
+    <roll name="attr.str" expr="4d6kh3"/>
+    <roll name="attr.dex" expr="4d6kh3"/>
+    <roll name="attr.con" expr="4d6kh3"/>
+    <roll name="attr.int" expr="4d6kh3"/>
+    <roll name="attr.wis" expr="4d6kh3"/>
+    <roll name="attr.cha" expr="4d6kh3"/>
+    <roll name="attr.cha" expr="4d6kh3"/>
+    <roll name="attr.cha" expr="4d6kh3"/>
 </feature>
 
 <!-- Ability Boosts  -->
@@ -65,6 +84,7 @@
 <feature id="vision.darkvision">
     <meta>vision</meta>
 </feature>
+
 
 <!-- Ancestries -->
 <feature id="ancestry.dwarf">

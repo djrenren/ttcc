@@ -2,6 +2,9 @@ use serde::{de, Serialize, Deserialize};
 use serde_json::{Value, from_str, from_reader, to_value};
 use strong_xml::XmlRead;
 
+pub mod roll;
+use roll::RollExpr;
+
 #[derive(Clone, Debug, Default, XmlRead)]
 #[xml(tag="feature")]
 pub struct Feature {
@@ -9,7 +12,7 @@ pub struct Feature {
     pub id: String,
     #[xml(flatten_text="meta")]
     pub tags: Vec<String>,
-    #[xml(child="data", child = "add", child="choice", child="ref")]
+    #[xml(child="data", child = "add", child="choice", child="ref", child="roll")]
     pub traits: Vec<Trait>,
 }
 
@@ -40,15 +43,26 @@ pub enum Trait {
     Choice {
         #[xml(attr="id")]
         id: String,
+        #[xml(attr="default")]
+        default: Option<String>,
         #[xml(child="and", child = "or", child="meta")]
         query: Query,
+
     },
     #[xml(tag="ref")]
     Ref {
         #[xml(attr="id")]
         id: String,
+    },
+    #[xml(tag="roll")]
+    Roll {
+        #[xml(attr="name")]
+        name: String,
+        #[xml(attr="expr")]
+        expr: RollExpr
     }
 }
+
 
 
 
