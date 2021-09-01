@@ -107,6 +107,14 @@
     <add value="attr.cha">-2</add>
 </feature>
 
+<!-- Skills -->
+<feature id="skill.acrobatics.proficiency">
+    <meta>proficiency</meta>
+</feature>
+
+<feature id="skill.lore.circus.proficiency">
+    <meta>proficiency</meta>
+</feature>
 
 <!--Languages-->
 <feature id="language.common">
@@ -147,6 +155,55 @@
     </choice>
 </feature>
 
+<!-- Backgrounds -->
+<feature id="background.acrobat">
+    <meta>background</meta>
+    <ref id="skill.acrobatics.proficiency" />
+    <ref id="skill.lore.circus.proficiency" />
+    <choice id="background.acrobat.boost1">
+        <and>
+            <meta>boost</meta>
+            <meta>acrobat</meta>
+        </and>
+    </choice>
+</feature>
+
+<feature id="background.acrobat.str">
+    <meta>acrobat</meta>
+    <meta>boost</meta>
+    <ref id="boost.str" />
+    <choice id="background.acrobat.boost1">
+        <and>
+            <meta>boost</meta>
+            <or>
+                <meta>dex</meta>
+                <meta>int</meta>
+                <meta>con</meta>
+                <meta>wis</meta>
+                <meta>cha</meta>
+            </or>
+        </and>
+    </choice>
+</feature>
+
+
+<feature id="background.acrobat.dex">
+    <meta>acrobat</meta>
+    <meta>boost</meta>
+    <ref id="boost.dex" />
+    <choice id="background.acrobat.boost1">
+        <and>
+            <meta>boost</meta>
+            <or>
+                <meta>str</meta>
+                <meta>int</meta>
+                <meta>con</meta>
+                <meta>wis</meta>
+                <meta>cha</meta>
+            </or>
+        </and>
+    </choice>
+</feature>
 
 
 </library>
