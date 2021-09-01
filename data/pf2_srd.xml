@@ -71,6 +71,43 @@
     <add value="attr.cha">2</add>
 </feature>
 
+<feature id="flaw.str" repeat="true">
+    <meta>flaw</meta>
+    <meta>str</meta>
+    <add value="attr.str">-2</add>
+</feature>
+
+<feature id="flaw.dex" repeat="true">
+    <meta>flaw</meta>
+    <meta>dex</meta>
+    <add value="attr.dex">-2</add>
+</feature>
+
+<feature id="flaw.con" repeat="true">
+    <meta>flaw</meta>
+    <meta>con</meta>
+    <add value="attr.con">-2</add>
+</feature>
+
+<feature id="flaw.int" repeat="true">
+    <meta>flaw</meta>
+    <meta>int</meta>
+    <add value="attr.int">-2</add>
+</feature>
+
+<feature id="flaw.wis" repeat="true">
+    <meta>flaw</meta>
+    <meta>wis</meta>
+    <add value="attr.wis">-2</add>
+</feature>
+
+<feature id="flaw.cha" repeat="true">
+    <meta>flaw</meta>
+    <meta>cha</meta>
+    <add value="attr.cha">-2</add>
+</feature>
+
+
 <!--Languages-->
 <feature id="language.common">
     <meta>language</meta>
@@ -91,6 +128,7 @@
     <meta>ancestry</meta>
     <ref id="boost.con" />
     <ref id="boost.wis" />
+    <ref id="flaw.cha" />
     <ref id="language.common" />
     <ref id="language.dwarven" />
     <ref id="vision.darkvision" />

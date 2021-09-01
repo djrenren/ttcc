@@ -109,4 +109,5 @@ fn parse() {
     assert!(character.features.contains("attrs.default"));
     assert_eq!(character.values["attr.con"].as_i64().unwrap(), 12);
     assert_eq!(character.values["attr.str"].as_i64().unwrap(), 12);
+    assert_eq!(character.values["attr.cha"].as_i64().unwrap(), 8);
 }
